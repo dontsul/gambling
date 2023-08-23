@@ -1,0 +1,53 @@
+.app {
+  background-color: var(--bg-block);
+  border-radius: 6px;
+  width: 100%;
+  // margin-top: 20px;
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 25px 20px;
+    gap: 40px;
+
+    &__description {
+      color: var(--text);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+    }
+
+    &__btn {
+      padding: 12px;
+      border-radius: 16px;
+      background-color: var(--bg-btn);
+
+      min-width: 179px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.3s ease-in-out;
+    }
+    &__btn:hover {
+      transform: scale(1.05);
+    }
+
+    &__btn span {
+      color: #fff;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 19.2px */
+      text-transform: uppercase;
+    }
+  }
+}
+@media screen and (max-width: 991px) {
+  .app {
+    &__wrap {
+      flex-direction: column;
+    }
+  }
+}

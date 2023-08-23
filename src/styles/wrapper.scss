@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  // grid-template-columns: minmax(677px, 1fr) minmax(200px, 295px);
+  grid-template-columns: auto 295px;
+  gap: 20px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 100%;
+  order: 1;
+}
+
+.aside {
+  order: 2;
+}
+
+@media screen and (max-width: 991px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .aside {
+    order: 1;
+  }
+  .main {
+    order: 2;
+  }
+}

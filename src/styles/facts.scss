@@ -1,0 +1,73 @@
+@import "mixins";
+.facts {
+  background-color: var(--bg-block);
+  border-radius: 6px;
+  overflow: hidden;
+  &__wrap {
+    padding: 32px 20px;
+
+    &__title {
+      @include title;
+      border-bottom: 2px solid #c5c5c5;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        border-bottom: 1px solid rgba(119, 119, 119, 0.5);
+        padding: 8px 16px;
+
+        &__name {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          // min-width: 200px;
+          max-width: 200px;
+          width: 100%;
+        }
+        &__name img {
+          padding: 2px 4px;
+        }
+        &__name span {
+          color: var(--text);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 24px */
+          text-transform: capitalize;
+        }
+
+        &__descriotion {
+          color: var(--text);
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .facts {
+    &__wrap {
+      &__list {
+        &__item {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    }
+  }
+}

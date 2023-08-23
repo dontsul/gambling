@@ -1,0 +1,86 @@
+@import "mixins";
+
+.bonus-game {
+  background-color: var(--bg-block);
+  border-radius: 6px;
+  overflow: hidden;
+  &__wrap {
+    padding: 32px 53px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 99px;
+
+    &__circle {
+      width: 100%;
+      height: 100%;
+      max-width: 277px;
+      max-height: 277px;
+      flex-shrink: 0;
+      border-radius: 160px;
+      background: #e2eaf7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__img-block {
+      &__img {
+        width: 100%;
+        max-width: 250px;
+        max-height: 250px;
+        height: 100%;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &__title {
+        @include title;
+
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 16px;
+      }
+
+      &__text {
+        color: #192a32;
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-bottom: 24px;
+      }
+
+      &__btn {
+        display: inline-flex;
+        padding: 12px 32px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 16px;
+        border: 1px solid #fff;
+        background: var(--primary-color);
+        color: #fff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .bonus-game {
+    &__wrap {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+}

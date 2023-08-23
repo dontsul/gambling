@@ -1,0 +1,136 @@
+@import "mixins";
+
+.support {
+  background-color: var(--bg-block);
+  border-radius: 6px;
+  overflow: hidden;
+  &__wrap {
+    padding: 32px 20px;
+    background-image: url("../images/support/bg-support.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__title {
+      @include title;
+
+      font-size: 48px;
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      color: var(--text);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      margin-bottom: 24px;
+    }
+
+    &__wrap-btns {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 35px;
+
+      &__btn {
+        border-radius: 16px;
+        border: 1px solid var(--text);
+        padding: 10px 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease-in-out;
+      }
+      &__btn:hover {
+        transform: scale(1.05);
+      }
+      &__btn img {
+        width: 24px;
+        height: 24px;
+      }
+      &__btn span {
+        color: var(--text);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 128%; /* 20.48px */
+        text-transform: uppercase;
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &__item {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--text);
+        display: flex;
+        align-items: flex-start;
+        gap: 26px;
+
+        &__left {
+          display: flex;
+          gap: 16px;
+          width: 252px;
+
+          &__img {
+            width: 24px;
+            height: 24px;
+          }
+
+          &__name {
+            color: var(--text);
+            /* New style/body */
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+          }
+        }
+        &__right {
+          color: var(--text);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+        }
+        &__right a {
+          color: var(--secondary-color);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 24px */
+          position: relative;
+        }
+        &__right a span {
+          text-decoration-line: underline;
+        }
+      }
+      &__item:last-child {
+        margin-top: 31px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .support {
+    &__wrap {
+      &__wrap-btns {
+        flex-wrap: wrap;
+      }
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &__item {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

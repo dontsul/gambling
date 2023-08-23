@@ -1,0 +1,25 @@
+@import "mixins";
+
+.up {
+  background-color: var(--bg-block);
+  border-radius: 6px;
+  overflow: hidden;
+
+  &__wrap {
+    padding: 32px 20px;
+    &__title {
+      @include title;
+
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      color: var(--text);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+}

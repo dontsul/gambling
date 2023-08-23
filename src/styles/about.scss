@@ -1,0 +1,94 @@
+@import "mixins";
+
+.about {
+  background-color: var(--bg-block);
+  border-radius: 6px;
+  overflow: hidden;
+  &__wrap {
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 20px 0;
+
+      &__title {
+        @include title;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+
+        &__item {
+          display: flex;
+          gap: 7px;
+        }
+
+        &__item p {
+          color: var(--text);
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+        }
+        &__item div {
+          height: auto;
+          height: 24px;
+          width: 23px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      &__btn {
+        color: #fff;
+        padding: 12px 32px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 128%; /* 20.48px */
+        text-transform: uppercase;
+        border-radius: 16px;
+        background: var(--primary-color);
+        box-shadow: 0px 4px 18px 0px rgba(14, 24, 17, 0.25);
+        width: auto;
+        display: inline;
+        transition: all 0.3s ease-in-out;
+      }
+      &__btn:hover {
+        transform: scale(1.05);
+      }
+    }
+    &__content:first-child {
+      padding-top: 0;
+    }
+  }
+}
+
+.primary-title {
+  font-size: 48px;
+}
+
+@media screen and (max-width: 991px) {
+  .about {
+    &__wrap {
+      &__content {
+        &__title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .primary-title {
+    font-size: 32px;
+  }
+}
